@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>QnA Email Signature Generator</title>
   </head>
   <body>
     <div style="margin-bottom: 10px">
@@ -69,9 +69,14 @@
         }
 
         if (newPhone) {
-          const phoneElem = (container.querySelector(
-            "#phoneNumber"
-          ).textContent = newPhone + (newExt ? " Ext. " + newExt : ""));
+          const cleaned = newPhone.replace(/\D/g, "");
+          const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+          let formatted = newPhone;
+          if (match) {
+            formatted = `(${match[1]}) ${match[2]}-${match[3]}`;
+          }
+          container.querySelector("#phoneNumber").textContent =
+            formatted + (newExt ? " Ext. " + newExt : "");
         }
       }
 
