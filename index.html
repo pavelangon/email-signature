@@ -37,12 +37,12 @@
         placeholder="Ext"
         style="padding: 5px; width: 80px; margin-left: 5px"
       />
-      <input
+      <!-- <input
         type="text"
         id="meetingInput"
         placeholder="Enter meeting link"
         style="padding: 5px; width: 200px; margin-left: 5px"
-      />
+      /> -->
       <br />
       <button onclick="updateSignature()" style="padding: 5px; margin-top: 5px">
         Update Signature
@@ -86,10 +86,10 @@
             formatted + (newExt ? " Ext. " + newExt : "");
         }
 
-        if (newLink) {
-          const meetingLink = container.querySelector("#meetingLink");
-          meetingLink.setAttribute("href", newLink);
-        }
+        // if (newLink) {
+        //   const meetingLink = container.querySelector("#meetingLink");
+        //   meetingLink.setAttribute("href", newLink);
+        // }
       }
 
       async function copySignature() {
@@ -172,7 +172,7 @@
               />
               <span id="phoneNumber">(000) 000-0000 Ext. 000</span>
             </div>
-            <br />
+            <!-- <br />
             <div style="font-size: 12px; color: #243b54; margin-left: 1px">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/5346/5346453.png"
@@ -185,7 +185,7 @@
                 target="_blank"
                 >Book a time with me</a
               >
-            </div>
+            </div> -->
           </td>
           <td style="padding: 18px 18px 18px 22px; vertical-align: center">
             <div style="font-size: 11px">
