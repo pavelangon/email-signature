@@ -37,6 +37,12 @@
         placeholder="Ext"
         style="padding: 5px; width: 80px; margin-left: 5px"
       />
+      <input
+        type="text"
+        id="meetingInput"
+        placeholder="Enter meeting link"
+        style="padding: 5px; width: 200px; margin-left: 5px"
+      />
       <br />
       <button onclick="updateSignature()" style="padding: 5px; margin-top: 5px">
         Update Signature
@@ -53,6 +59,7 @@
         const newEmail = document.getElementById("emailInput").value;
         const newPhone = document.getElementById("phoneInput").value;
         const newExt = document.getElementById("extInput").value;
+        const newLink = document.getElementById("meetingInput").value;
 
         const container = document.getElementById("signatureContent");
 
@@ -77,6 +84,11 @@
           }
           container.querySelector("#phoneNumber").textContent =
             formatted + (newExt ? " Ext. " + newExt : "");
+        }
+
+        if (newLink) {
+          const meetingLink = container.querySelector("#meetingLink");
+          meetingLink.setAttribute("href", newLink);
         }
       }
 
@@ -160,8 +172,22 @@
               />
               <span id="phoneNumber">(000) 000-0000 Ext. 000</span>
             </div>
+            <br />
+            <div style="font-size: 12px; color: #243b54; margin-left: 1px">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5346/5346453.png"
+                width="12"
+                style="vertical-align: middle; margin-right: 6px"
+              />
+              <a
+                id="meetingLink"
+                style="color: #4ac9c0; text-decoration: underline"
+                target="_blank"
+                >Book a time with me</a
+              >
+            </div>
           </td>
-          <td style="padding: 18px 18px 18px 22px; vertical-align: top">
+          <td style="padding: 18px 18px 18px 22px; vertical-align: center">
             <div style="font-size: 11px">
               <a
                 href="https://urldefense.proofpoint.com/v2/url?u=https-3A__qnatech.com_PDFs_LineCard.pdf&d=DwMFaQ&c=euGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=rJUGKOa0M32y-Nu7VC9ha5Ml7hIUyIVBf7ha5Vmrevs&m=zEN_WuA3gVcaNmMLl80H8fZhJXJlAR3g_XpWXuqyu5rAvYvwOIKQzmLv_D1dmc9G&s=AwEHuwD8Vqt_YyxPrV8TYoszW_SiIJOJJLOOM8zDoyU&e="
